@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 5511;
 
-//path
+//path for css file connect 
 app.use(express.static(__dirname + '/public'));
 
 // Set up view engine and middleware
