@@ -42,6 +42,8 @@
     <p>Title: <%= book.title %></p>
     <p>Author: <%= book.author %></p>
     <p>Price: <%= book.page %></p>
+    <p>Catagary: &nbsp;<%= movie.catagary %></p>
+    
     
     <form id="deleteForm" method="POST" action="/delete/<%= task.id %>">
         <input type="hidden" name="bookId" value="<%= book._id %>">
