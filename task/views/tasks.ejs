@@ -1,0 +1,43 @@
+<!-- views/tasks.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager - Tasks</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <header>
+    <h1>Your Tasks</h1>
+    <nav>
+      <ul>
+        <li><a href="/create-task">Create New Task</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <% if (tasks.length === 0) { %>
+      <p>No tasks found.</p>
+    <% } else { %>
+      <ul>
+        <% tasks.forEach(task => { %>
+          <li>
+            <strong>Title:</strong> <%= task.title %><br>
+            <strong>Description:</strong> <%= task.description %><br>
+            <strong>Due Date:</strong> <%= task.dueDate %><br>
+            <strong>Status:</strong> <%= task.status %>
+          </li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Task Manager App</p>
+  </footer>
+</body>
+</html>

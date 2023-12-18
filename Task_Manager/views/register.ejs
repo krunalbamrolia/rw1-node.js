@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Register</title>
+  <link rel="stylesheet" href="css/register.css">
+ 
+</head>
+<body>
+  <div class="background-shapes">
+    <div class="shape" style="width: 100px; height: 100px; top: 20%; left: 10%;"></div>
+    <div class="shape" style="width: 80px; height: 80px; top: 50%; left: 70%;"></div>
+    <div class="shape" style="width: 120px; height: 120px; top: 80%; left: 30%;"></div>
+  </div>
+
+  <section>
+    <% if (message) { %>
+      <p class="error"><%= message %></p>
+    <% } %>
+
+    <form action="/register" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="/login">Login here</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Admin Panel</p>
+  </footer>
+</body>
+</html>

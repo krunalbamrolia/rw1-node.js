@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+ <script src="js/dashboard.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>Welcome to Your Admin Panel, <span class="username"><%= username %></span></h1>
+    <nav>
+      <ul>
+        <li>
+          <button class="create-task-btn" onclick="location.href='/create-task'">
+            <i class="material-icons">add</i>Create Task
+          </button>
+        </li>
+        <li><a href="/logout"><i class="material-icons">exit_to_app</i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Your Tasks</h2>
+    <% if (tasks.length === 0) { %>
+      <p>No tasks found.</p>
+    <% } else { %>
+      <table id="taskTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let id = 1; %>
+          <% tasks.forEach(task => { %>
+            <tr>
+              <td><%= id++ %></td>
+              <td><%= task.title %></td>
+              <td><%= new Date(task.dueDate).toLocaleDateString() %></td>
+              <td style="color: <%= task.status === 'Pending' ? '#FF9800' : (task.status === 'In Progress' ? '#2196F3' : '#4CAF50') %>; "> <%= task.status %> </td>
+              <td>
+                <a href="/view-task/<%= task.id %>"><i class="material-icons">visibility</i></a>
+                <a href="/edit-task/<%= task.id %>"><i class="material-icons">edit</i></a>
+                <a href="/delete-task/<%= task.id %>"><i class="material-icons">delete</i></a>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } %>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Admin Panel</p>
+  </footer>
+</body>
+</html> 
+
+
+
+ 

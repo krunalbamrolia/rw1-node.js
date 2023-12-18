@@ -1,0 +1,99 @@
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+.username {
+   color: #00bcd4; 
+   text-transform: capitalize ;
+ }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+td a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+td a:hover {
+  color: #0066cc;
+}
+
+td .material-icons {
+  vertical-align: middle;
+}
+
+.create-task-btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-task-btn i {
+  margin-right: 8px;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #777;
+}

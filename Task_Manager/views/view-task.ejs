@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager - View Task</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/view-task.css">
+ 
+</head>
+<body>
+  <div class="background-shapes">
+    <div class="shape" style="width: 100px; height: 100px; top: 20%; left: 10%;"></div>
+    <div class="shape" style="width: 80px; height: 80px; top: 50%; left: 70%;"></div>
+    <div class="shape" style="width: 120px; height: 120px; top: 80%; left: 30%;"></div>
+  </div>
+
+  <div class="container">
+    <h1>View Task</h1>
+
+    <table>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Title</td>
+        <td><%= singletask.title %></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><%= singletask.description %></td>
+      </tr>
+      <tr>
+        <td>Due Date</td>
+        <td><%= singletask.dueDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td><%= singletask.status %></td>
+      </tr>
+    </table>
+
+    <div class="icons">
+      <a href="/edit-task/<%= singletask.id %>" class="edit">
+        <i class="fas fa-edit"></i>Edit
+      </a>
+      <a href="/delete-task/<%= singletask.id %>" class="delete">
+        <i class="fas fa-trash-alt"></i>Delete
+      </a>
+    </div>
+
+    <a href="/" class="back-link">
+      <i class="fas fa-arrow-left"></i>Back to Dashboard
+    </a>
+  </div>
+</body>
+</html>

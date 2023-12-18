@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/create-task.css">
+  <title>Create Task</title>
+ </head>
+<body>
+  <div class="background-shapes">
+    <div class="shape" style="width: 100px; height: 100px; top: 20%; left: 10%;"></div>
+    <div class="shape" style="width: 80px; height: 80px; top: 50%; left: 70%;"></div>
+    <div class="shape" style="width: 120px; height: 120px; top: 80%; left: 30%;"></div>
+  </div>
+
+  <div class="container">
+    <h1>Create Task</h1>
+    <form action="/add-task" method="post">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+
+      <label for="dueDate">Due Date:</label>
+      <input type="date" id="dueDate" name="dueDate" required>
+
+      <label for="status">Status:</label>
+      <select id="status" name="status" required>
+        <option value="pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <button type="submit">Create Task</button>
+    </form>
+    <a href="/" class="back-link">
+      <i class="fas fa-arrow-left"></i>Back to Dashboard
+    </a>
+
+    <% if (message) { %>
+      <p><%= message %></p>
+    <% } %>
+  </div>
+</body>
+</html>
